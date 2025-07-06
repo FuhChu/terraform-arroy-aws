@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Hello Arroy Consulting!</title>
+    <style>
+        body { font-family: Arial, sans-serif; text-align: center; margin-top: 50px; }
+        h1 { color: #333; }
+        p { color: #666; }
+    </style>
+</head>
+<body>
+    <h1>Hello World from Apache on AWS EC2!</h1>
+    <p>This page is served from a Docker container.</p>
+    <p>Database Connection Information (passed via environment variables):</p>
+    <ul>
+        <li>DB Host: $DB_HOST</li>
+        <li>DB Port: $DB_PORT</li>
+        <li>DB Name: $DB_NAME</li>
+        <li>DB User: $DB_USER</li>
+    </ul>
+    <p><i>Note: Actual database connection would be handled by your application code within the Docker container.</i></p>
+</body>
+</html>
