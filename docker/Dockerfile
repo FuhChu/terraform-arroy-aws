@@ -13,6 +13,7 @@ RUN apt-get update && \
     postgresql-client \
     apache2 \
     curl \
+    wget \
     libc6-dev \
     libncurses5-dev \
     libsqlite3-dev \
@@ -21,13 +22,14 @@ RUN apt-get update && \
     zlib1g-dev \
     build-essential \
     software-properties-common && \
+    apt-get clean && \
     rm -rf /var/lib/apt/lists/*
 
 # Install .NET SDK (e.g., .NET 8.0)
 # Refer to Microsoft's official guide for the latest instructions:
 # https://learn.microsoft.com/en-us/dotnet/core/install/linux-ubuntu
 RUN wget https://packages.microsoft.com/config/ubuntu/22.04/packages-microsoft-prod.deb -O packages-microsoft-prod.deb && \
-    sudo dpkg -i packages-microsoft-prod.deb && \
+    dpkg -i packages-microsoft-prod.deb && \
     rm packages-microsoft-prod.deb && \
     apt-get update && \
     apt-get install -y dotnet-sdk-8.0
